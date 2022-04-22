@@ -20,5 +20,5 @@
       "canisters/backend": [".dfx/local/canisters/backend"]
     }
   },
-  "include": ["frontend"]
+  "include": ["src/frontend"]
 }
