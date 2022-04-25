@@ -1,2 +1,2 @@
 // export const nothingYet = {}
-export * from "./useScrollToTop"
+export * from './useScrollToTop'

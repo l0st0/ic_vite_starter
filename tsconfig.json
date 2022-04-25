@@ -22,6 +22,7 @@
       "@/pages": ["src/frontend/pages/index.tsx"],
       "@/components": ["src/frontend/components/index.ts"],
       "@/utils": ["src/frontend/utils/index.ts"],
+      "@/types": ["src/frontend/types/index.ts"],
       "@/hooks": ["src/frontend/hooks/index.ts"]
     }
   },
