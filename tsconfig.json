@@ -17,8 +17,12 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@/backend": [".dfx/local/canisters/backend"],
-      "@/stitches": ["src/frontend/styles/stitches.config.ts"]
+      "@/backend/main": [".dfx/local/canisters/backend"],
+      "@/styles": ["src/frontend/styles/index.ts"],
+      "@/pages": ["src/frontend/pages/index.tsx"],
+      "@/components": ["src/frontend/components/index.ts"],
+      "@/utils": ["src/frontend/utils/index.ts"],
+      "@/hooks": ["src/frontend/hooks/index.ts"]
     }
   },
   "include": ["src/frontend"]
