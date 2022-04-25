@@ -1,7 +1,8 @@
 import React from "react"
+import { Flex } from "./components"
 
 const App = () => {
-  return <div className="App">Hello there</div>
+  return <Flex>Hello there</Flex>
 }
 
 export default App

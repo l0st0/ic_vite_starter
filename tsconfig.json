@@ -17,7 +17,8 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "canisters/backend": [".dfx/local/canisters/backend"]
+      "@backend": [".dfx/local/canisters/backend"],
+      "@stitches": ["src/frontend/stitches.config.ts"]
     }
   },
   "include": ["src/frontend"]

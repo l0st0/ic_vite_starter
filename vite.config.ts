@@ -1,6 +1,6 @@
 import { defineConfig } from "vite"
 import reactRefresh from "@vitejs/plugin-react-refresh"
-import path from "path"
+import tsconfigPaths from "vite-tsconfig-paths"
 import dfxJson from "./dfx.json"
 import fs from "fs"
 
@@ -25,28 +25,6 @@ try {
   console.error("\n⚠️  Before starting the dev server run: dfx deploy\n\n")
 }
 
-// List of all aliases for canisters
-// This will allow us to: import { canisterName } from "canisters/canisterName"
-const aliases = Object.entries(dfxJson.canisters).reduce(
-  (acc, [name, _value]) => {
-    // Get the network name, or `local` by default.
-    const networkName = process.env["DFX_NETWORK"] || "local"
-    const outputRoot = path.join(
-      __dirname,
-      ".dfx",
-      networkName,
-      "canisters",
-      name,
-    )
-
-    return {
-      ...acc,
-      ["canisters/" + name]: path.join(outputRoot, "index" + ".js"),
-    }
-  },
-  {},
-)
-
 // Generate canister ids, required by the generated canister code in .dfx/local/canisters/*
 // This strange way of JSON.stringifying the value is required by vite
 const canisterDefinitions = Object.entries(canisterIds).reduce(
@@ -65,13 +43,7 @@ const DFX_PORT = dfxJson.networks.local.bind.split(":")[1]
 // See guide on how to configure Vite at:
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh()],
-  resolve: {
-    alias: {
-      // Here we tell Vite the "fake" modules that we want to define
-      ...aliases,
-    },
-  },
+  plugins: [reactRefresh(), tsconfigPaths()],
   server: {
     fs: {
       allow: ["."],
