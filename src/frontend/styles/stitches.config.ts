@@ -192,6 +192,7 @@ export const {
       ...whiteA,
       ...blackA,
 
+      primary: "#BAF76A",
       // Semantic colors
       hiContrast: "$slate12",
       // loContrast: '$slate1',
@@ -201,6 +202,26 @@ export const {
       transparentPanel: "hsl(0 0% 0% / 97%)",
       shadowLight: "hsl(206 22% 7% / 35%)",
       shadowDark: "hsl(206 22% 7% / 20%)",
+    },
+    fontWeights: {
+      low: 400,
+      medium: 600,
+      bold: 800,
+    },
+    fontSizes: {
+      1: "0.75rem",
+      2: "0.875rem",
+      3: "1rem",
+      4: "1.125rem",
+      5: "1.25rem",
+      6: "1.5rem",
+      7: "1.875rem",
+      8: "2.25rem",
+      9: "3rem",
+      10: "3.75rem",
+      11: "4.5rem",
+      12: "6rem",
+      13: "8rem",
     },
     space: {
       1: "4px",
@@ -212,6 +233,9 @@ export const {
       7: "48px",
       8: "64px",
       9: "80px",
+      10: "106px",
+      11: "132px",
+      12: "154px",
     },
     sizes: {
       1: "4px",
@@ -223,23 +247,14 @@ export const {
       7: "48px",
       8: "64px",
       9: "80px",
-    },
-    fontSizes: {
-      1: "12px",
-      2: "13px",
-      3: "15px",
-      4: "17px",
-      5: "19px",
-      6: "21px",
-      7: "27px",
-      8: "35px",
-      9: "59px",
+      max: "1440px",
     },
     radii: {
-      1: "4px",
-      2: "6px",
-      3: "8px",
-      4: "12px",
+      1: "0.25rem",
+      2: "0.375rem",
+      3: "0.5rem",
+      4: "0.75rem",
+      primary: "$4",
       round: "50%",
       pill: "9999px",
     },
@@ -386,6 +401,17 @@ export const {
     backgroundClip: (value: Stitches.PropertyValue<"backgroundClip">) => ({
       WebkitBackgroundClip: value,
       backgroundClip: value,
+    }),
+    borderRadiusTop: (value: number | string) => ({
+      borderTopLeftRadius: value,
+      borderTopRightRadius: value,
+    }),
+    borderRadiusBottom: (value: number | string) => ({
+      borderBottomLeftRadius: value,
+      borderBottomRightRadius: value,
+    }),
+    linearGradient: (value: string) => ({
+      background: `linear-gradient(${value})`,
     }),
   },
 })
