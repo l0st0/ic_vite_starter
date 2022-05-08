@@ -6,7 +6,7 @@
     "prebuild": "npm rebuild esbuild",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "prettier": "npx prettier --write ."
+    "check": "npx prettier --write . && npx tsc --noEmit"
   },
   "dependencies": {
     "@dfinity/agent": "^0.11.1",
